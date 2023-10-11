@@ -3,14 +3,21 @@
 	const { database } = data;
 </script>
 
-<h1>아보하 맛집 리스트</h1>
+<header>
+	<h1>아보하 맛집 리스트</h1>
+</header>
 
 <div class="container">
-	{#each database as { restaurant, location, writer, created, type }}
+	{#each database as { restaurant, location, writer, created, type, menu }}
 		<div class="card">
 			<span class="restaurant">{restaurant}</span>
 			<span class="location">{location}</span>
 			<span class="type">{type}</span>
+			<span class="menu"
+				>{#each menu as dish}
+					<p>{dish.name}</p>
+				{/each}</span
+			>
 			<div class="created-info">
 				<span class="created">{created}</span>
 				<span class="writer">{writer}</span>
@@ -20,6 +27,9 @@
 </div>
 
 <style>
+	header {
+		text-align: center;
+	}
 	.container {
 		display: flex;
 		flex-wrap: wrap;
@@ -30,7 +40,7 @@
 		border-radius: 10px;
 		padding: 15px;
 		width: 240px;
-		height: 120px;
+		min-height: 120px;
 		margin: 20px;
 		position: relative;
 	}
