@@ -20,5 +20,9 @@
 		"svelte": "^4.0.5",
 		"vite": "^4.4.2"
 	},
+	"dependencies": {
+		"mongodb": "^6.1.0",
+		"svelte-preprocess": "^5.0.4"
+	},
 	"type": "module"
 }
