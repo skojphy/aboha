@@ -1,2 +1,3 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>아 보드게임 하고 싶다</h1>
+
+<a href="./deli">맛집 리스트</a>
