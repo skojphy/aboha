@@ -234,7 +234,7 @@ export const load = async function () {
 		},
 		{
 			id: 32,
-			description: '올림픽에서 그메달을 딴 당신, 시상대에 올라가 메달을 받는 모습을 연기해 주세요.',
+			description: '올림픽에서 금메달을 딴 당신, 시상대에 올라가 메달을 받는 모습을 연기해 주세요.',
 			low: '아주 겸손한 모습부터',
 			high: '아주 거만한 모습까지',
 			isMoving: true
