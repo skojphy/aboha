@@ -332,6 +332,34 @@ export const load = async function () {
 			low: '가장 약한 동물부터',
 			high: '가장 강한 동물까지',
 			isMoving: true
+		},
+		{
+			id: 46,
+			description: '저녁 식사 후 디저트가 나왔습니다. 어떤 디저트일까요?',
+			low: '평범한 디저트부터',
+			high: '가장 신기한 디저트까지',
+			isMoving: false
+		},
+		{
+			id: 47,
+			description: '좀비 떼가 습격했습니다. 당신은 어디에 숨어 있나요?',
+			low: '살아남을만한 장소부터',
+			high: '좀비에게 바로 들킬만한 장소까지',
+			isMoving: false
+		},
+		{
+			id: 48,
+			description: '하늘에서 무엇이든 비처럼 내리게 할 수 있습니다. 무엇을 내리게 할까요?',
+			low: '모두가 싫어하는 것부터',
+			high: '모두가 환호하는 것까지',
+			isMoving: false
+		},
+		{
+			id: 49,
+			description: '당신은 김치전을 부치는 중입니다. 김치전을 뒤집는 모습을 보여주세요.',
+			low: '난생 처음 김치전을 뒤집는 모습부터',
+			high: '아주 능숙하게 뒤집는 모습까지',
+			isMoving: true
 		}
 	];
 	const loadData = JSON.parse(JSON.stringify(data));
