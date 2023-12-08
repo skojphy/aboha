@@ -236,6 +236,56 @@ export const load = async function () {
 			low: '버스 기사가 눈치채지 못할 동작부터',
 			high: '도저히 못 보고 지나치지 못할 동작까지',
 			isMoving: true
+		},
+		{
+			id: 32,
+			description: '올림픽에서 그메달을 딴 당신, 시상대에 올라가 메달을 받는 모습을 연기해 주세요.',
+			low: '아주 겸손한 모습부터',
+			high: '아주 거만한 모습까지',
+			isMoving: true
+		},
+		{
+			id: 33,
+			description: '당신은 복숭아를 먹으려고 합니다. 먹는 모습을 보여주세요.',
+			low: '아주 물렁물렁한 복숭아를 먹는 모습부터',
+			high: '아주 딱딱한 복숭아를 먹는 모습까지',
+			isMoving: true
+		},
+		{
+			id: 34,
+			description:
+				'아이스크림 사장님이 된 당신, 2가지 맛 아이스크림을 섞어 새로운 맛을 만들려고 합니다. 어떤 맛을 만들까요?',
+			low: '최고의 조합일 것 같은 맛부터',
+			high: '전혀 안 어울릴 것 같은 맛까지',
+			isMoving: false
+		},
+		{
+			id: 35,
+			description: '가족 모임에서 중대 발표를 하려는 당신, 무슨 내용의 발표일까요?',
+			low: '별로 놀랍지 않은 발표부터',
+			high: '깜짝 놀랄만 한 발표까지',
+			isMoving: false
+		},
+		{
+			id: 36,
+			description: '',
+			low: '',
+			high: '',
+			isMoving: true
+		},
+		{
+			id: 32,
+			description: '',
+			low: '',
+			high: '',
+			isMoving: true
+		},
+		{
+			id: 32,
+			description: '',
+			low: '',
+			high: '',
+			isMoving: true
 		}
 	];
 	data.forEach((item) => {
