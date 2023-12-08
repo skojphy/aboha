@@ -6,7 +6,7 @@
 
 	const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-	let selectedNumber = 0;
+	let selectedNumber = getRandomNumber(0, database.length - 1);
 	$: currentData = database[selectedNumber];
 
 	const changeCard = () => {
