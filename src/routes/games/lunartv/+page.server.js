@@ -268,24 +268,38 @@ export const load = async function () {
 		},
 		{
 			id: 36,
-			description: '',
-			low: '',
-			high: '',
+			description: '당신의 반려견을 산책시키는 모습을 보여주세요.',
+			low: '작고 귀여운 반려견부터',
+			high: '크고 사나운 반려견까지',
 			isMoving: true
 		},
 		{
-			id: 32,
-			description: '',
-			low: '',
-			high: '',
+			id: 37,
+			description: '당신은 짝사랑하던 사람에게 말을 걸어 보기로 결심했습니다. 어떤 말을 할 건가요?',
+			low: '너무나도 진부한 멘트부터',
+			high: '아주 참신한 멘트까지',
+			isMoving: false
+		},
+		{
+			id: 38,
+			description: '수업 시간에 잠이 쏟아집니다. 어떻게 잠을 쫓을 건가요?',
+			low: '절대 잠이 깨지 않을 것 같은 동작부터',
+			high: '한 방에 잠이 달아날 것 같은 동작까지',
 			isMoving: true
 		},
 		{
-			id: 32,
-			description: '',
-			low: '',
-			high: '',
+			id: 39,
+			description: '인기 스타인 당신, 팬미팅장에서 팬들에게 인사를 합니다. 어떻게 인사하고 있나요?',
+			low: '거만한 인사부터',
+			high: '겸손하고 깍듯한 인사까지',
 			isMoving: true
+		},
+		{
+			id: 40,
+			description: '빨래가 끝난 세탁기 안에서 어떤 물건을 발견했습니다. 무엇이 들어있을까요?',
+			low: '별로 당황스럽지 않을 만한 것부터',
+			high: '발견하자마자 경악할 만한 것까지',
+			isMoving: false
 		}
 	];
 	data.forEach((item) => {

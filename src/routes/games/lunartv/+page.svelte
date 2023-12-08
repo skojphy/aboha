@@ -8,7 +8,7 @@
 	$: currentData = database[selectedNumber];
 
 	const changeCard = () => {
-		selectedNumber = getRandomNumber(0, 38);
+		selectedNumber = getRandomNumber(0, database.length - 1);
 	};
 </script>
 
