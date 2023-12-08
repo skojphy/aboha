@@ -295,6 +295,43 @@ export const load = async function () {
 			low: '별로 당황스럽지 않을 만한 것부터',
 			high: '발견하자마자 경악할 만한 것까지',
 			isMoving: false
+		},
+		{
+			id: 41,
+			description: '당신이 앞 차를 받아 버렸어요. 앞 차에서 내리는 사람은 누구일까요?',
+			low: '합의가 쉬울 것 같은 사람부터',
+			high: '도저히 합의할 수 없을 것 같은 사람까지',
+			isMoving: false
+		},
+		{
+			id: 42,
+			description:
+				'엘리베이터가 고장난 아파트 7층에 물건을 배달해야 합니다. 어떤 물건을 배달하는 중인지 말해 주세요.',
+			low: '아주 가벼운 물건부터',
+			high: '엄청나게 무거운 물건까지',
+			isMoving: false
+		},
+		{
+			id: 43,
+			description: '조선시대의 물건 딱 하나를 현재로 가져올 수 있습니다. 무엇을 가져올 건가요?',
+			low: '전혀 쓸데없는 물건부터',
+			high: '가장 유용하게 쓰게 될 물건까지',
+			isMoving: false
+		},
+		{
+			id: 44,
+			description:
+				'무인도에 표류한 당신은 해변에 떠내려온 물건 하나를 발견합니다. 어떤 물건일까요?',
+			low: '전혀 쓸데없는 물건부터',
+			high: '가장 유용한 물건까지',
+			isMoving: false
+		},
+		{
+			id: 45,
+			description: '약육강식 동물의 세계! 동물 흉내를 내 주세요.',
+			low: '가장 약한 동물부터',
+			high: '가장 강한 동물까지',
+			isMoving: true
 		}
 	];
 	const loadData = JSON.parse(JSON.stringify(data));
