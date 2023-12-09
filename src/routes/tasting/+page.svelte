@@ -8,6 +8,7 @@
 	};
 
 	let tastingDate = '';
+	let name = '';
 	let tastingMenu = '';
 	let freeComment = '';
 
@@ -18,9 +19,9 @@
 
 	let totalScore = 0;
 
-	function calculateTotalScore() {
+	const calculateTotalScore = () => {
 		totalScore = Object.values(satisfactionData).reduce((sum, item) => sum + item.value, 0);
-	}
+	};
 </script>
 
 <main>
@@ -29,6 +30,11 @@
 	<div>
 		<label for="tastingDate">시식 일자:</label>
 		<input type="text" bind:value={tastingDate} id="tastingDate" />
+	</div>
+
+	<div>
+		<label for="name">평가자:</label>
+		<input type="text" bind:value={name} id="name" />
 	</div>
 
 	<div>
