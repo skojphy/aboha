@@ -1,42 +1,54 @@
 <script>
 	import { onMount } from 'svelte';
-	import { getRandomNumber } from '$utils';
-
-	const STORAGE_KEY = 'fortuneData';
+	import { getRandomNumber, isSameDate } from '$utils';
 
 	export let data;
+
 	let randomFortuneData;
 	let loading = true;
 
+	const STORAGE_KEY = 'fortuneData';
+	const LOADING_DELAY = 700;
+
+	const generateNewData = () => {
+		const { database } = data;
+		const dataCount = database.length;
+		randomFortuneData = database[getRandomNumber(0, dataCount)];
+
+		const currentDate = new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' });
+
+		const newData = { data: randomFortuneData, date: currentDate };
+		localStorage.setItem(STORAGE_KEY, JSON.stringify(newData));
+	};
+
 	onMount(async () => {
-		// 브라우저 로컬 스토리지에서 이전에 저장한 데이터 확인
 		const storedData = localStorage.getItem(STORAGE_KEY);
 
 		if (storedData) {
-			// 저장된 데이터가 있으면 이를 사용
-			randomFortuneData = storedData;
+			const { data: savedData, date: savedDate } = JSON.parse(storedData);
+			if (isSameDate(new Date(savedDate), new Date())) {
+				randomFortuneData = savedData;
+			} else {
+				generateNewData();
+			}
 		} else {
-			// 저장된 데이터가 없으면 새로운 데이터를 생성
-			const { database } = data;
-			const dataCount = database.length;
-			randomFortuneData = database[getRandomNumber(0, dataCount)];
-
-			// 새로운 데이터를 로컬 스토리지에 저장
-			localStorage.setItem(STORAGE_KEY, randomFortuneData);
+			generateNewData();
 		}
 
-		loading = false;
+		setTimeout(() => {
+			loading = false;
+		}, LOADING_DELAY);
 	});
 </script>
 
 <header>
 	<h1>아 운세 보고 싶다</h1>
-	<span>for A.B.H</span>
+	<span>for A.B.H.</span>
 </header>
 
 <div class="container">
 	{#if loading}
-		<span class="loading-spinner">Loading...</span>
+		<span class="loader" />
 	{:else if randomFortuneData}
 		<div class="luck-text">{randomFortuneData}</div>
 	{/if}
@@ -51,22 +63,47 @@
 	}
 	.container {
 		display: flex;
-	}
-	.loading-spinner {
-		font-size: 10px;
-		width: 1em;
-		height: 1em;
-		border-radius: 50%;
-		position: relative;
-		text-indent: -9999em;
-		animation: mulShdSpin 1.1s infinite ease;
-		transform: translateZ(0);
+		justify-content: center;
 	}
 	.luck-text {
 		font-size: 2rem;
 		font-weight: 100;
 		margin: 20px auto;
 		padding: 10px;
-		background-color: blanchedalmond;
+		background-color: #ddceff;
+	}
+	.loader {
+		width: calc(100px - 14px);
+		height: 50px;
+		margin: 20px auto;
+		position: relative;
+		animation: flippx 1s infinite linear;
+	}
+	.loader:before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		margin: auto;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: #ddceff;
+		transform-origin: -14px 50%;
+		animation: spin 0.5s infinite linear;
+	}
+	@keyframes flippx {
+		0%,
+		49% {
+			transform: scaleX(1);
+		}
+		50%,
+		100% {
+			transform: scaleX(-1);
+		}
+	}
+	@keyframes spin {
+		100% {
+			transform: rotate(360deg);
+		}
 	}
 </style>
