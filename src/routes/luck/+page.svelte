@@ -47,10 +47,13 @@
 </header>
 
 <div class="container">
-	<span class="date"
-		>{new Date().getFullYear()}년 {new Date().getMonth() + 1}월 {new Date().getDate()}일</span
-	>
-	<span class="luck-title">오늘의 운세</span>
+	{#if !loading}
+		<span class="date"
+			>{new Date().getFullYear()}년 {new Date().getMonth() + 1}월 {new Date().getDate()}일</span
+		>
+
+		<span class="luck-title">오늘의 운세</span>
+	{/if}
 
 	{#if loading}
 		<span class="loader" />
