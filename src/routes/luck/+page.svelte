@@ -10,12 +10,12 @@
 	const STORAGE_KEY = 'fortuneData';
 	const LOADING_DELAY = 700;
 
+	const currentDate = new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' });
+
 	const generateNewData = () => {
 		const { database } = data;
 		const dataCount = database.length;
 		randomFortuneData = database[getRandomNumber(0, dataCount)];
-
-		const currentDate = new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' });
 
 		const newData = { data: randomFortuneData, date: currentDate };
 		localStorage.setItem(STORAGE_KEY, JSON.stringify(newData));
@@ -47,6 +47,11 @@
 </header>
 
 <div class="container">
+	<span class="date"
+		>{new Date().getFullYear()}년 {new Date().getMonth() + 1}월 {new Date().getDate()}일</span
+	>
+	<span class="luck-title">오늘의 운세</span>
+
 	{#if loading}
 		<span class="loader" />
 	{:else if randomFortuneData}
@@ -59,11 +64,21 @@
 		text-align: center;
 	}
 	span {
-		font-size: 1.3rem;
+		font-size: 1.1rem;
 	}
 	.container {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
+	}
+	.date,
+	.luck-title {
+		font-size: 1.3rem;
+		font-weight: 100;
+		margin: auto;
+	}
+	.date {
+		margin-top: 20px;
 	}
 	.luck-text {
 		font-size: 2rem;
