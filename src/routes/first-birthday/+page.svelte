@@ -119,11 +119,27 @@
 <footer>footer</footer>
 
 <style>
+	@font-face {
+		font-family: 'Cafe24Oneprettynight';
+		font-weight: normal;
+		font-style: normal;
+		src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Oneprettynight/Cafe24Oneprettynight.eot');
+		src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Oneprettynight/Cafe24Oneprettynight.eot?#iefix')
+				format('embedded-opentype'),
+			url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Oneprettynight/Cafe24Oneprettynight.woff2')
+				format('woff2'),
+			url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Oneprettynight/Cafe24Oneprettynight.woff')
+				format('woff'),
+			url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Oneprettynight/Cafe24Oneprettynight.ttf')
+				format('truetype');
+		font-display: swap;
+	}
 	main {
 		padding: 0;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		font-family: 'Cafe24Oneprettynight', Calibri, 'Trebuchet MS', sans-serif;
 	}
 
 	.main-image {
