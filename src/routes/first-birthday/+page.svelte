@@ -2,6 +2,36 @@
 	// export let data;
 	import mainImage from '$lib/dol/images/invitation1.png';
 	import sampleImage from '$lib/dol/images/sample-image.jpeg';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		const [lat, lng] = [37.504547, 126.897091];
+		const markerPosition = new kakao.maps.LatLng(lat, lng);
+		const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+		const options = {
+			center: markerPosition,
+			level: 3
+		};
+
+		const map = new kakao.maps.Map(container, options);
+
+		const zoomControl = new kakao.maps.ZoomControl();
+
+		const marker = new kakao.maps.Marker({
+			position: markerPosition
+		});
+		const content =
+			'<div class ="label" style="transform: translateY(-57px); background-color: black; padding: 4px 8px; border-radius: 8px;"><span class="left"></span><span class="center" style="color: white"><a style="color:white" href="https://map.kakao.com/link/to/D2%ED%8C%8C%ED%8B%B0%EB%A3%B8,37.504547,126.897091">어쩌구 저쩌구!</a></span><span class="right"></span></div>';
+
+		const customOverlay = new kakao.maps.CustomOverlay({
+			position: markerPosition,
+			content: content
+		});
+
+		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+		marker.setMap(map);
+		customOverlay.setMap(map);
+	});
 </script>
 
 <header>
