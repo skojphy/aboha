@@ -2,8 +2,9 @@
 	// export let data;
 	import mainImage from '$lib/dol/images/invitation1.png';
 	import sampleImage from '$lib/dol/images/sample-image.jpeg';
+	import sampleThumb from '$lib/dol/images/sample-thumb.png';
 	import { onMount } from 'svelte';
-
+	import Gallery from './Gallery.svelte';
 	onMount(() => {
 		const [lat, lng] = [37.504547, 126.897091];
 		const markerPosition = new kakao.maps.LatLng(lat, lng);
@@ -32,6 +33,72 @@
 		marker.setMap(map);
 		customOverlay.setMap(map);
 	});
+
+	const images = [
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		}
+	];
 </script>
 
 <header>
@@ -67,17 +134,8 @@
 				행복했던 시간들
 			</p>
 		</h2>
-		<div class="gallery">
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-		</div>
+
+		<Gallery galleryID="aboha-gallery" {images} />
 	</section>
 
 	<section class="call">
