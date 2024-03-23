@@ -2,8 +2,9 @@
 	// export let data;
 	import mainImage from '$lib/dol/images/invitation1.png';
 	import sampleImage from '$lib/dol/images/sample-image.jpeg';
+	import sampleThumb from '$lib/dol/images/sample-thumb.png';
 	import { onMount } from 'svelte';
-
+	import Gallery from './Gallery.svelte';
 	onMount(() => {
 		const [lat, lng] = [37.504547, 126.897091];
 		const markerPosition = new kakao.maps.LatLng(lat, lng);
@@ -32,6 +33,77 @@
 		marker.setMap(map);
 		customOverlay.setMap(map);
 	});
+
+	const images = [
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		},
+		{
+			largeURL: sampleImage,
+			thumbnailURL: sampleThumb,
+			width: 500,
+			height: 500,
+			alt: '333'
+		}
+	];
+
+	const now = new Date();
+	const eventDay = new Date('2024-04-20');
+	let diffDay = eventDay - now;
+	const days = Math.floor(diffDay / (1000 * 60 * 60 * 24));
 </script>
 
 <header>
@@ -53,7 +125,7 @@
 			>
 		</p>
 
-		<p class="dday">🌸 아보하 돌까지 D-00 🌸</p>
+		<p class="dday">🌸 아보하 돌까지 D-{days} 🌸</p>
 	</section>
 
 	<div id="map" />
@@ -67,17 +139,8 @@
 				행복했던 시간들
 			</p>
 		</h2>
-		<div class="gallery">
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-			<img class="gallery-images" src={sampleImage} alt="아보하" />
-		</div>
+
+		<Gallery galleryID="aboha-gallery" {images} />
 	</section>
 
 	<section class="call">
@@ -142,6 +205,14 @@
 		font-display: swap;
 	}
 
+	@font-face {
+		font-family: 'Cafe24Shiningstar';
+		src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Shiningstar.woff')
+			format('woff');
+		font-weight: normal;
+		font-style: normal;
+	}
+
 	main {
 		padding: 0;
 		display: flex;
@@ -165,7 +236,7 @@
 
 	.dday,
 	.link {
-		background-color: lightgrey;
+		background-color: rgba(102, 115, 92, 0.2);
 		border-radius: 30px;
 		color: black;
 		padding: 2px 10px;
@@ -181,7 +252,7 @@
 	.line {
 		width: 1px;
 		height: 130px;
-		background-color: lightgrey;
+		background-color: rgba(102, 115, 92);
 		margin: 30px;
 	}
 
@@ -198,6 +269,14 @@
 
 	.call {
 		text-align: center;
+	}
+
+	.call h2,
+	.money h2,
+	.guest-book h2 {
+		font-family: Cafe24Shiningstar;
+		font-size: 1.5em;
+		color: #66725d;
 	}
 
 	.money {
