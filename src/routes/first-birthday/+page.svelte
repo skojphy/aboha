@@ -99,6 +99,11 @@
 			alt: '333'
 		}
 	];
+
+	const now = new Date();
+	const eventDay = new Date('2024-04-20');
+	let diffDay = eventDay - now;
+	const days = Math.floor(diffDay / (1000 * 60 * 60 * 24));
 </script>
 
 <header>
@@ -120,7 +125,7 @@
 			>
 		</p>
 
-		<p class="dday">🌸 아보하 돌까지 D-00 🌸</p>
+		<p class="dday">🌸 아보하 돌까지 D-{days} 🌸</p>
 	</section>
 
 	<div id="map" />
