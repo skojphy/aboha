@@ -205,6 +205,14 @@
 		font-display: swap;
 	}
 
+	@font-face {
+		font-family: 'Cafe24Shiningstar';
+		src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Shiningstar.woff')
+			format('woff');
+		font-weight: normal;
+		font-style: normal;
+	}
+
 	main {
 		padding: 0;
 		display: flex;
@@ -228,7 +236,7 @@
 
 	.dday,
 	.link {
-		background-color: lightgrey;
+		background-color: rgba(102, 115, 92, 0.2);
 		border-radius: 30px;
 		color: black;
 		padding: 2px 10px;
@@ -244,7 +252,7 @@
 	.line {
 		width: 1px;
 		height: 130px;
-		background-color: lightgrey;
+		background-color: rgba(102, 115, 92);
 		margin: 30px;
 	}
 
@@ -261,6 +269,14 @@
 
 	.call {
 		text-align: center;
+	}
+
+	.call h2,
+	.money h2,
+	.guest-book h2 {
+		font-family: Cafe24Shiningstar;
+		font-size: 1.5em;
+		color: #66725d;
 	}
 
 	.money {
