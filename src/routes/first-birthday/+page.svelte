@@ -15,21 +15,17 @@
 		};
 
 		const map = new kakao.maps.Map(container, options);
-
-		const zoomControl = new kakao.maps.ZoomControl();
-
 		const marker = new kakao.maps.Marker({
 			position: markerPosition
 		});
 		const content =
-			'<div class ="label" style="transform: translateY(-57px); background-color: black; padding: 4px 8px; border-radius: 8px;"><span class="left"></span><span class="center" style="color: white"><a style="color:white" href="https://map.kakao.com/link/to/D2%ED%8C%8C%ED%8B%B0%EB%A3%B8,37.504547,126.897091">어쩌구 저쩌구!</a></span><span class="right"></span></div>';
+			'<div class ="label" style="transform: translateY(-57px); background-color: rgba(102, 115, 92, 0.9); padding: 4px 8px; border-radius: 8px; font-size: 0.8em;"><span class="left"></span><span class="center" style="color: white"><a style="color:white" href="https://map.kakao.com/link/to/D2%ED%8C%8C%ED%8B%B0%EB%A3%B8,37.504547,126.897091">어쩌구 저쩌구!</a></span><span class="right"></span></div>';
 
 		const customOverlay = new kakao.maps.CustomOverlay({
 			position: markerPosition,
 			content: content
 		});
 
-		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 		marker.setMap(map);
 		customOverlay.setMap(map);
 	});
@@ -118,7 +114,7 @@
 
 	<section class="info">
 		<p>
-			2024-4-20<br />
+			2024-04-20<br />
 			서울특별시 무슨구 무슨무슨동<br />
 			<a href="https://map.kakao.com/link/to/D2%ED%8C%8C%ED%8B%B0%EB%A3%B8,37.504547,126.897091"
 				>어디어디 파티룸</a
@@ -150,7 +146,7 @@
 			<br />
 			언제든 연락하셔서 질문해 주세요.
 		</p>
-		<a href="./" class="link">연락하기</a>
+		<a href="https://open.kakao.com/o/s5sjNUwf" class="link">연락하기</a>
 	</section>
 
 	<section class="money">
@@ -243,15 +239,15 @@
 	.link {
 		background-color: rgba(102, 115, 92, 0.2);
 		border-radius: 30px;
-		color: black;
-		padding: 2px 10px;
-		font-size: 0.8em;
+		color: #66725e;
+		padding: 3px 25px;
+		font-size: 0.85em;
 	}
 
 	#map {
 		/* overflow: auto; */
-		width: 80vw;
-		height: 50vw;
+		width: 85vw;
+		height: 60vw;
 	}
 
 	.line {
