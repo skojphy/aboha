@@ -1,5 +1,7 @@
 <script>
-	// export let data;
+	export let data;
+	const { database } = data;
+	import { enhance } from '$app/forms';
 	import mainImage from '$lib/dol/images/invitation1.png';
 	import sampleImage from '$lib/dol/images/sample-image.jpeg';
 	import sampleThumb from '$lib/dol/images/sample-thumb.png';
@@ -105,7 +107,6 @@
 	let isModalOpen = false;
 	const openModal = () => {
 		isModalOpen = true;
-		console.log('REBWE', isModalOpen);
 	};
 	const closeModal = () => {
 		isModalOpen = false;
@@ -172,9 +173,10 @@
 
 	<section class="guest-book">
 		<h2>축하 메시지 전하기</h2>
-		<div class="message">아보하야 생일 축하해~. 너의 돌잔치가 대단히 기대되는구나!</div>
-		<div class="message">아보하야 생일 축하해~. 너의 돌잔치가 대단히 기대되는구나!</div>
-		<div class="message">아보하야 생일 축하해~. 너의 돌잔치가 대단히 기대되는구나!</div>
+
+		{#each database.reverse() as { name, message }}
+			<div class="message">{message} - {name}</div>
+		{/each}
 		<div class="buttons">
 			<button>전체보기</button>
 			<button on:click={openModal}>작성하기</button>
@@ -196,9 +198,29 @@
 	<div class="modal" style={isModalOpen ? 'display: flex' : 'display: none'}>
 		<div class="modal-content">
 			<h2>방명록 작성하기</h2>
-			<form>
-				<label for="message">메시지:</label>
-				<textarea id="message" name="message" rows="4" cols="50" />
+			<form
+				method="POST"
+				action="?/submitForm"
+				use:enhance={() => {
+					return async ({ result }) => {
+						if (result.type === 'error') {
+							window.alert('잠시 후 다시 시도해 주세요.');
+						}
+						window.location.href = './first-birthday';
+					};
+				}}
+				on:submit={true}
+			>
+				<label for="message"
+					>메시지를 작성해 주세요.
+					<textarea id="message" name="message" rows="4" cols="50" required />
+				</label>
+
+				<label>
+					이름을 적어 주세요.
+					<input type="text" name="name" placeholder="이름" required />
+				</label>
+
 				<div class="buttons">
 					<button type="submit">전송</button>
 					<button on:click={closeModal}>취소</button>

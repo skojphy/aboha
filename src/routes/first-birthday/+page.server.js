@@ -8,3 +8,21 @@ export const load = async function () {
 		database: loadData
 	};
 };
+
+export const actions = {
+	submitForm: async ({ request }) => {
+		const values = await request.formData();
+
+		const getFormValues = (key) => values.get(key);
+
+		const submitData = {
+			name: getFormValues('name'),
+			message: getFormValues('message'),
+			timeStamp: new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })
+		};
+
+		await database_dol.insertOne(submitData);
+
+		return { success: true };
+	}
+};
