@@ -31,13 +31,13 @@
 
 <style>
 	.pswp-gallery {
-		grid-template-columns: 30% 30% 30%;
-		display: grid;
-		width: 90vw;
-		justify-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		max-width: 80vw;
 	}
 	.thumbnail-image {
-		width: 100px;
-		height: 100px;
+		width: 25vw;
+		height: 25vw;
 	}
 </style>
