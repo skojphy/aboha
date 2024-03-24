@@ -5,6 +5,7 @@
 	import sampleThumb from '$lib/dol/images/sample-thumb.png';
 	import { onMount } from 'svelte';
 	import Gallery from './Gallery.svelte';
+
 	onMount(() => {
 		const [lat, lng] = [37.504547, 126.897091];
 		const markerPosition = new kakao.maps.LatLng(lat, lng);
@@ -100,6 +101,15 @@
 	const eventDay = new Date('2024-04-20');
 	let diffDay = eventDay - now;
 	const days = Math.floor(diffDay / (1000 * 60 * 60 * 24));
+
+	let isModalOpen = false;
+	const openModal = () => {
+		isModalOpen = true;
+		console.log('REBWE', isModalOpen);
+	};
+	const closeModal = () => {
+		isModalOpen = false;
+	};
 </script>
 
 <header>
@@ -167,7 +177,7 @@
 		<div class="message">아보하야 생일 축하해~. 너의 돌잔치가 대단히 기대되는구나!</div>
 		<div class="buttons">
 			<button>전체보기</button>
-			<button>작성하기</button>
+			<button on:click={openModal}>작성하기</button>
 		</div>
 	</section>
 
@@ -182,7 +192,21 @@
 	</section>
 </main>
 
-<footer>footer</footer>
+{#if isModalOpen}
+	<div class="modal" style={isModalOpen ? 'display: flex' : 'display: none'}>
+		<div class="modal-content">
+			<h2>방명록 작성하기</h2>
+			<form>
+				<label for="message">메시지:</label>
+				<textarea id="message" name="message" rows="4" cols="50" />
+				<div class="buttons">
+					<button type="submit">전송</button>
+					<button on:click={closeModal}>취소</button>
+				</div>
+			</form>
+		</div>
+	</div>
+{/if}
 
 <style>
 	@font-face {
@@ -311,5 +335,58 @@
 
 	.buttons {
 		display: flex;
+		justify-content: space-evenly;
+	}
+
+	.modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 999;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.modal-content {
+		background-color: white;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		max-width: 80%;
+		max-height: 80%;
+		overflow: auto;
+	}
+
+	.close-button {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		cursor: pointer;
+		font-size: 1.5rem;
+	}
+
+	.modal-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: white;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		max-width: 80%;
+		max-height: 80%;
+		overflow: auto;
+	}
+
+	.close-button {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		cursor: pointer;
+		font-size: 1.5rem;
 	}
 </style>
