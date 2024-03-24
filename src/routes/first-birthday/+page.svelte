@@ -225,6 +225,11 @@
 		text-align: center;
 	}
 
+	section {
+		padding: 10px;
+		margin: 15px 0;
+	}
+
 	.main-image {
 		width: 100vw;
 		max-width: 480px;
@@ -252,7 +257,7 @@
 	.line {
 		width: 1px;
 		height: 130px;
-		background-color: rgba(102, 115, 92);
+		background-color: #66725e;
 		margin: 30px;
 	}
 
@@ -288,6 +293,16 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.guest-book button {
+		background-color: rgba(102, 115, 92, 0.2);
+		border-radius: 30px;
+		color: black;
+		padding: 2px 10px;
+		font-size: 0.8em;
+		border: none;
+		margin: 10px;
 	}
 
 	.message {
