@@ -51,7 +51,7 @@
 
 			<label for="boardgame"
 				>보드게임 가져오세요?
-				<input type="radio" name="boardgame" placeholder="예) 올나잇, 조퇴 - 23시" required />
+				<input type="radio" name="boardgame" required />
 			</label>
 
 			<div class="buttons">
