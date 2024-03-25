@@ -184,13 +184,17 @@
 	</section>
 
 	<section>
-		<p>
-			주의사항
-			<br />
-			주의하상
-			<br />
-			어쩌구저꺼구
-		</p>
+		<ul>
+			<li>가져올 수 있는 보드게임이 있다면 엄마에게 알려 주세요.</li>
+			<li>여러분의 소중한 개인정보는 정모 종료 후 파기할 예정이에요.</li>
+			<li>늦참, 조기퇴근 모두 가능하지만 회비에는 차이가 없습니다.</li>
+		</ul>
+	</section>
+
+	<section class="attendance">
+		<h2>
+			<a href="./first-birthday/attendance">🌸 참석 의사 전달하기 🌸</a>
+		</h2>
 	</section>
 </main>
 
@@ -349,6 +353,7 @@
 
 	.message {
 		background-color: rgb(250, 254, 249);
+		width: 85%;
 		margin: 10px;
 		padding: 10px;
 		border-radius: 10px;
@@ -410,5 +415,27 @@
 		right: 10px;
 		cursor: pointer;
 		font-size: 1.5rem;
+	}
+
+	ul {
+		padding: 10px 10px 10px 30px;
+	}
+
+	li {
+		padding: 5px;
+	}
+
+	li::marker {
+		content: '👉';
+	}
+
+	.attendance {
+		background-color: rgb(235, 244, 231);
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	.attendance a {
+		color: black;
 	}
 </style>
