@@ -193,7 +193,7 @@
 
 	<section class="attendance">
 		<h2>
-			<a href="./">🌸 참석 의사 전달하기 🌸</a>
+			<a href="./first-birthday/attendance">🌸 참석 의사 전달하기 🌸</a>
 		</h2>
 	</section>
 </main>
