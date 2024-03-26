@@ -90,7 +90,7 @@
 			<br />
 			언제든 연락하셔서 질문해 주세요.
 		</p>
-		<a href="https://open.kakao.com/o/s5sjNUwf" class="link">연락하기</a>
+		<a href="https://open.kakao.com/me/Ssamzzang" class="link">연락하기</a>
 	</section>
 
 	<section class="money">
