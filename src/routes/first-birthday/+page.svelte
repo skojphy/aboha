@@ -7,6 +7,7 @@
 	import sampleThumb from '$lib/dol/images/sample-thumb.png';
 	import { onMount } from 'svelte';
 	import Gallery from './Gallery.svelte';
+	import images from './images';
 
 	onMount(() => {
 		const [lat, lng] = [37.504547, 126.897091];
@@ -32,72 +33,6 @@
 		marker.setMap(map);
 		customOverlay.setMap(map);
 	});
-
-	const images = [
-		{
-			largeURL: sampleImage,
-			thumbnailURL: sampleThumb,
-			width: 500,
-			height: 500,
-			alt: '333'
-		},
-		{
-			largeURL: sampleImage,
-			thumbnailURL: sampleThumb,
-			width: 500,
-			height: 500,
-			alt: '333'
-		},
-		{
-			largeURL: sampleImage,
-			thumbnailURL: sampleThumb,
-			width: 500,
-			height: 500,
-			alt: '333'
-		},
-		{
-			largeURL: sampleImage,
-			thumbnailURL: sampleThumb,
-			width: 500,
-			height: 500,
-			alt: '333'
-		},
-		{
-			largeURL: sampleImage,
-			thumbnailURL: sampleThumb,
-			width: 500,
-			height: 500,
-			alt: '333'
-		},
-		{
-			largeURL: sampleImage,
-			thumbnailURL: sampleThumb,
-			width: 500,
-			height: 500,
-			alt: '333'
-		},
-		{
-			largeURL: sampleImage,
-			thumbnailURL: sampleThumb,
-			width: 500,
-			height: 500,
-			alt: '333'
-		},
-		{
-			largeURL: sampleImage,
-			thumbnailURL: sampleThumb,
-			width: 500,
-			height: 500,
-			alt: '333'
-		},
-		{
-			largeURL: sampleImage,
-			thumbnailURL: sampleThumb,
-			width: 500,
-			height: 500,
-			alt: '333'
-		}
-	];
 
 	const now = new Date();
 	const eventDay = new Date('2024-04-20');
