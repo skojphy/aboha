@@ -39,5 +39,6 @@
 	.thumbnail-image {
 		width: 25vw;
 		height: 25vw;
+		margin: 4px 0;
 	}
 </style>

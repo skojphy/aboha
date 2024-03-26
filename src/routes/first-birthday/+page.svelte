@@ -3,8 +3,6 @@
 	const { database } = data;
 	import { enhance } from '$app/forms';
 	import mainImage from '$lib/dol/images/invitation1.png';
-	import sampleImage from '$lib/dol/images/sample-image.jpeg';
-	import sampleThumb from '$lib/dol/images/sample-thumb.png';
 	import { onMount } from 'svelte';
 	import Gallery from './Gallery.svelte';
 	import images from './images';
@@ -239,18 +237,7 @@
 		width: 1px;
 		height: 130px;
 		background-color: #66725e;
-		margin: 30px;
-	}
-
-	.gallery {
-		display: flex;
-		max-width: 90vw;
-		flex-wrap: wrap;
-		justify-content: space-around;
-	}
-
-	.gallery-images {
-		width: 30%;
+		margin: 30px 0 0 0;
 	}
 
 	.call {
@@ -323,14 +310,6 @@
 		overflow: auto;
 	}
 
-	.close-button {
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		cursor: pointer;
-		font-size: 1.5rem;
-	}
-
 	.modal-content {
 		display: flex;
 		flex-direction: column;
@@ -342,14 +321,6 @@
 		max-width: 80%;
 		max-height: 80%;
 		overflow: auto;
-	}
-
-	.close-button {
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		cursor: pointer;
-		font-size: 1.5rem;
 	}
 
 	ul {
@@ -368,9 +339,16 @@
 		background-color: rgb(235, 244, 231);
 		width: 100%;
 		margin-bottom: 0;
+		padding: 0;
+	}
+
+	.attendance h2 {
+		margin: 0;
 	}
 
 	.attendance a {
 		color: black;
+		display: block;
+		padding: 30px 0;
 	}
 </style>
