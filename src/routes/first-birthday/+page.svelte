@@ -116,11 +116,16 @@
 		</div>
 	</section>
 
-	<section>
+	<section class="notice">
+		<h2>안내 사항</h2>
 		<ul>
-			<li>가져올 수 있는 보드게임이 있다면 엄마에게 알려 주세요.</li>
-			<li>여러분의 소중한 개인정보는 정모 종료 후 파기할 예정이에요.</li>
-			<li>늦참, 조기퇴근 모두 가능하지만 회비에는 차이가 없습니다.</li>
+			<li>여러분의 소중한 개인 정보는 정모 이후 파기 예정이에요.</li>
+			<li>
+				파티룸 자체의 주차장이 없어요. 주차가 필요하시면 검색하시거나, 쌈장에게 연락해 주세요.
+			</li>
+			<li>늦참, 조기 퇴근 모두 가능하지만 회비 차이는 없습니다.</li>
+			<li>추후 준비물 안내를 드릴 예정이에요. 잊지 말고 준비해 주세요!</li>
+			<li>파티룸에 보드게임이 없어요. 재미있는 게임 가져와 주세요!</li>
 		</ul>
 	</section>
 
@@ -246,7 +251,8 @@
 
 	.call h2,
 	.money h2,
-	.guest-book h2 {
+	.guest-book h2,
+	.notice h2 {
 		font-family: Cafe24Shiningstar;
 		font-size: 1.5em;
 		color: #66725d;
@@ -285,6 +291,12 @@
 	.buttons {
 		display: flex;
 		justify-content: space-evenly;
+	}
+
+	.buttons button {
+		color: #66725e;
+		padding: 3px 25px;
+		font-size: 0.9em;
 	}
 
 	.modal {
@@ -332,7 +344,7 @@
 	}
 
 	li::marker {
-		content: '👉';
+		content: '❥';
 	}
 
 	.attendance {
