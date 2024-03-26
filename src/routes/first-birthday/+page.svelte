@@ -3,14 +3,12 @@
 	const { database } = data;
 	import { enhance } from '$app/forms';
 	import mainImage from '$lib/dol/images/invitation1.png';
-	import sampleImage from '$lib/dol/images/sample-image.jpeg';
-	import sampleThumb from '$lib/dol/images/sample-thumb.png';
 	import { onMount } from 'svelte';
 	import Gallery from './Gallery.svelte';
 	import images from './images';
 
 	onMount(() => {
-		const [lat, lng] = [37.504547, 126.897091];
+		const [lat, lng] = [37.5184067, 126.9094536];
 		const markerPosition = new kakao.maps.LatLng(lat, lng);
 		const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 		const options = {
@@ -23,7 +21,7 @@
 			position: markerPosition
 		});
 		const content =
-			'<div class ="label" style="transform: translateY(-57px); background-color: rgba(102, 115, 92, 0.9); padding: 4px 8px; border-radius: 8px; font-size: 0.8em;"><span class="left"></span><span class="center" style="color: white"><a style="color:white" href="https://map.kakao.com/link/to/D2%ED%8C%8C%ED%8B%B0%EB%A3%B8,37.504547,126.897091">어쩌구 저쩌구!</a></span><span class="right"></span></div>';
+			'<div class ="label" style="transform: translateY(-57px); background-color: rgba(102, 115, 92, 0.93); padding: 4px 8px; border-radius: 8px; font-size: 0.8em;"><span class="left"></span><span class="center" style="color: white"><a style="color:white" href="https://map.kakao.com/link/to/D2%ED%8C%8C%ED%8B%B0%EB%A3%B8,37.504547,126.897091">4층 자갈자갈 바베큐!</a></span><span class="right"></span></div>';
 
 		const customOverlay = new kakao.maps.CustomOverlay({
 			position: markerPosition,
@@ -61,9 +59,9 @@
 	<section class="info">
 		<p>
 			2024-04-20<br />
-			서울특별시 무슨구 무슨무슨동<br />
+			서울특별시 영등포구 영등포동3가 13<br />
 			<a href="https://map.kakao.com/link/to/D2%ED%8C%8C%ED%8B%B0%EB%A3%B8,37.504547,126.897091"
-				>어디어디 파티룸</a
+				>자갈자갈 바베큐</a
 			>
 		</p>
 
@@ -92,7 +90,7 @@
 			<br />
 			언제든 연락하셔서 질문해 주세요.
 		</p>
-		<a href="https://open.kakao.com/o/s5sjNUwf" class="link">연락하기</a>
+		<a href="https://open.kakao.com/me/Ssamzzang" class="link">연락하기</a>
 	</section>
 
 	<section class="money">
@@ -103,7 +101,7 @@
 			일부 금액은 환급 예정입니다. <br />
 			4월 13일까지 입금 가능합니다.
 		</p>
-		<a href="./" class="link">입금하기</a>
+		<a href="https://qr.kakaopay.com/FdzAxOci761a808252" class="link">입금하기</a>
 	</section>
 
 	<section class="guest-book">
@@ -118,11 +116,16 @@
 		</div>
 	</section>
 
-	<section>
+	<section class="notice">
+		<h2>안내 사항</h2>
 		<ul>
-			<li>가져올 수 있는 보드게임이 있다면 엄마에게 알려 주세요.</li>
-			<li>여러분의 소중한 개인정보는 정모 종료 후 파기할 예정이에요.</li>
-			<li>늦참, 조기퇴근 모두 가능하지만 회비에는 차이가 없습니다.</li>
+			<li>여러분의 소중한 개인 정보는 정모 이후 파기 예정이에요.</li>
+			<li>
+				파티룸 자체의 주차장이 없어요. 주차가 필요하시면 검색하시거나, 쌈장에게 연락해 주세요.
+			</li>
+			<li>늦참, 조기 퇴근 모두 가능하지만 회비 차이는 없습니다.</li>
+			<li>추후 준비물 안내를 드릴 예정이에요. 잊지 말고 준비해 주세요!</li>
+			<li>파티룸에 보드게임이 없어요. 재미있는 게임 가져와 주세요!</li>
 		</ul>
 	</section>
 
@@ -208,7 +211,7 @@
 
 	section {
 		padding: 10px;
-		margin: 15px 0;
+		margin: 10px 0;
 	}
 
 	.main-image {
@@ -239,18 +242,7 @@
 		width: 1px;
 		height: 130px;
 		background-color: #66725e;
-		margin: 30px;
-	}
-
-	.gallery {
-		display: flex;
-		max-width: 90vw;
-		flex-wrap: wrap;
-		justify-content: space-around;
-	}
-
-	.gallery-images {
-		width: 30%;
+		margin: 25px 0 -5px 0;
 	}
 
 	.call {
@@ -259,7 +251,8 @@
 
 	.call h2,
 	.money h2,
-	.guest-book h2 {
+	.guest-book h2,
+	.notice h2 {
 		font-family: Cafe24Shiningstar;
 		font-size: 1.5em;
 		color: #66725d;
@@ -298,6 +291,13 @@
 	.buttons {
 		display: flex;
 		justify-content: space-evenly;
+		margin: 5px 0;
+	}
+
+	.buttons button {
+		color: #66725e;
+		padding: 3px 25px;
+		font-size: 0.9em;
 	}
 
 	.modal {
@@ -323,14 +323,6 @@
 		overflow: auto;
 	}
 
-	.close-button {
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		cursor: pointer;
-		font-size: 1.5rem;
-	}
-
 	.modal-content {
 		display: flex;
 		flex-direction: column;
@@ -344,33 +336,33 @@
 		overflow: auto;
 	}
 
-	.close-button {
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		cursor: pointer;
-		font-size: 1.5rem;
-	}
-
 	ul {
 		padding: 10px 10px 10px 30px;
 	}
 
 	li {
-		padding: 5px;
+		padding: 7px;
+		font-size: 0.9em;
 	}
 
 	li::marker {
-		content: '👉';
+		content: '❥';
 	}
 
 	.attendance {
 		background-color: rgb(235, 244, 231);
 		width: 100%;
 		margin-bottom: 0;
+		padding: 0;
+	}
+
+	.attendance h2 {
+		margin: 0;
 	}
 
 	.attendance a {
 		color: black;
+		display: block;
+		padding: 30px 0;
 	}
 </style>
