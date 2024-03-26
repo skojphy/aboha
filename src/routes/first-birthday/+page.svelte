@@ -101,7 +101,7 @@
 			일부 금액은 환급 예정입니다. <br />
 			4월 13일까지 입금 가능합니다.
 		</p>
-		<a href="./" class="link">입금하기</a>
+		<a href="https://qr.kakaopay.com/FdzAxOci761a808252" class="link">입금하기</a>
 	</section>
 
 	<section class="guest-book">
