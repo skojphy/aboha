@@ -340,7 +340,8 @@
 	}
 
 	li {
-		padding: 5px;
+		padding: 7px;
+		font-size: 0.9em;
 	}
 
 	li::marker {
