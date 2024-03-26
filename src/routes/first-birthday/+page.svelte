@@ -8,7 +8,7 @@
 	import images from './images';
 
 	onMount(() => {
-		const [lat, lng] = [37.504547, 126.897091];
+		const [lat, lng] = [37.5184067, 126.9094536];
 		const markerPosition = new kakao.maps.LatLng(lat, lng);
 		const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 		const options = {
@@ -21,7 +21,7 @@
 			position: markerPosition
 		});
 		const content =
-			'<div class ="label" style="transform: translateY(-57px); background-color: rgba(102, 115, 92, 0.9); padding: 4px 8px; border-radius: 8px; font-size: 0.8em;"><span class="left"></span><span class="center" style="color: white"><a style="color:white" href="https://map.kakao.com/link/to/D2%ED%8C%8C%ED%8B%B0%EB%A3%B8,37.504547,126.897091">어쩌구 저쩌구!</a></span><span class="right"></span></div>';
+			'<div class ="label" style="transform: translateY(-57px); background-color: rgba(102, 115, 92, 0.93); padding: 4px 8px; border-radius: 8px; font-size: 0.8em;"><span class="left"></span><span class="center" style="color: white"><a style="color:white" href="https://map.kakao.com/link/to/D2%ED%8C%8C%ED%8B%B0%EB%A3%B8,37.504547,126.897091">4층 자갈자갈 바베큐!</a></span><span class="right"></span></div>';
 
 		const customOverlay = new kakao.maps.CustomOverlay({
 			position: markerPosition,
@@ -59,9 +59,9 @@
 	<section class="info">
 		<p>
 			2024-04-20<br />
-			서울특별시 무슨구 무슨무슨동<br />
+			서울특별시 영등포구 영등포동3가 13<br />
 			<a href="https://map.kakao.com/link/to/D2%ED%8C%8C%ED%8B%B0%EB%A3%B8,37.504547,126.897091"
-				>어디어디 파티룸</a
+				>자갈자갈 바베큐</a
 			>
 		</p>
 
@@ -211,7 +211,7 @@
 
 	section {
 		padding: 10px;
-		margin: 15px 0;
+		margin: 10px 0;
 	}
 
 	.main-image {
@@ -242,7 +242,7 @@
 		width: 1px;
 		height: 130px;
 		background-color: #66725e;
-		margin: 30px 0 0 0;
+		margin: 25px 0 -5px 0;
 	}
 
 	.call {
@@ -291,6 +291,7 @@
 	.buttons {
 		display: flex;
 		justify-content: space-evenly;
+		margin: 5px 0;
 	}
 
 	.buttons button {
