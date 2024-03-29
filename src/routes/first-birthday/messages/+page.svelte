@@ -11,7 +11,10 @@
 		<h2>To. 아보하</h2>
 
 		{#each database as { name, message }}
-			<div class="message">{message} - {name}</div>
+			<div class="box__message">
+				<p class="message">{message}</p>
+				<p class="name">- {name}</p>
+			</div>
 		{/each}
 	</section>
 </main>
@@ -74,7 +77,7 @@
 		align-items: center;
 	}
 
-	.message {
+	.box__message {
 		background-color: rgb(102, 114, 92, 0.2);
 		margin: 10px;
 		padding: 15px;
@@ -83,5 +86,13 @@
 		min-width: 85%;
 		max-width: 85%;
 		box-sizing: border-box;
+	}
+
+	.box__message p {
+		margin: 0;
+	}
+
+	.name {
+		text-align: right;
 	}
 </style>
