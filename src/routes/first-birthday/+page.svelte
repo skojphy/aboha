@@ -76,7 +76,7 @@
 
 	<div class="line" />
 
-	<section>
+	<section class="photos">
 		<h2>
 			<p>
 				아보하와의<br />
@@ -256,7 +256,8 @@
 	.call h2,
 	.money h2,
 	.guest-book h2,
-	.notice h2 {
+	.notice h2,
+	.photos h2 {
 		font-family: Cafe24Shiningstar;
 		font-size: 1.5em;
 		color: #66725d;
