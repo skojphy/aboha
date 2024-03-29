@@ -190,6 +190,15 @@
 </main>
 
 <style>
+	/* 아이폰 버튼 스타일 초기화 */
+	input:not([type='color']),
+	button,
+	textarea,
+	button {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
 	@font-face {
 		font-family: 'Cafe24Oneprettynight';
 		font-weight: normal;
