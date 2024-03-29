@@ -117,7 +117,7 @@
 		<div class="buttons">
 			<a class="link" href="./first-birthday/messages">전체보기</a>
 			<!-- <button on:click={openModal}>작성하기</button> -->
-			<button on:click={() => dialog.showModal()}>작성하기!!</button>
+			<button on:click={() => dialog.showModal()}>작성하기</button>
 		</div>
 	</section>
 
@@ -231,6 +231,10 @@
 		margin: 10px 0;
 	}
 
+	p {
+		margin: 10px 0;
+	}
+
 	.main-image {
 		width: 100vw;
 		max-width: 480px;
@@ -245,8 +249,12 @@
 		background-color: rgba(102, 115, 92, 0.2);
 		border-radius: 30px;
 		color: #66725e;
-		padding: 3px 25px;
+		padding: 5px 10px;
 		font-size: 0.85em;
+	}
+
+	.dday {
+		height: 1.3rem;
 	}
 
 	#map {
@@ -275,6 +283,7 @@
 		font-family: Cafe24Shiningstar;
 		font-size: 1.5em;
 		color: #66725d;
+		margin: 5px;
 	}
 
 	.money {
@@ -390,18 +399,23 @@
 	.buttons {
 		display: flex;
 		justify-content: space-evenly;
+		align-items: center;
 		margin: 5px 0;
 	}
 
 	.buttons button,
 	.buttons a {
 		color: #66725e;
-		padding: 3px 25px;
+		padding: 5px 10px;
 		font-size: 0.9em;
+		height: 1.5rem;
+		box-sizing: border-box;
+		margin: 5px 20px;
 	}
 
 	ul {
-		padding: 10px 10px 10px 30px;
+		padding: 0 10px 10px 30px;
+		margin: 0;
 	}
 
 	li {
