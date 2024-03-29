@@ -209,6 +209,7 @@
 		left: 0;
 		bottom: 0;
 		background-color: #e0e3de;
+		color: #66725d;
 	}
 
 	dialog {

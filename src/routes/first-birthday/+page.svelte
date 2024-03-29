@@ -372,6 +372,7 @@
 		font-size: 1.7rem;
 		line-height: 1rem;
 		padding: 0;
+		border: none;
 	}
 
 	dialog .input-container {
@@ -455,5 +456,9 @@
 		color: black;
 		display: block;
 		line-height: 3.5rem;
+	}
+
+	.message a {
+		background-color: rgb(102, 114, 94, 0.2);
 	}
 </style>
