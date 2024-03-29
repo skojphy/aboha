@@ -122,8 +122,8 @@
 	</section>
 
 	<dialog bind:this={dialog} on:close={() => console.log('메시지 작성 취소')}>
-		<button class="close-button" on:click={onClose}>X</button>
-		<h2>방명록 작성하기</h2>
+		<button class="close-button" on:click={onClose}> × </button>
+		<h2>축하 메시지 작성하기</h2>
 		<form
 			method="POST"
 			action="?/submitForm"
@@ -139,19 +139,32 @@
 				console.log('메시지 전송');
 			}}
 		>
-			<label for="message"
-				>메시지를 작성해 주세요.
-				<textarea id="message" name="message" rows="4" cols="50" required />
-			</label>
+			<div class="input-container">
+				<textarea
+					class="message-dialog"
+					id="message"
+					name="message"
+					rows="4"
+					cols="50"
+					required
+					placeholder="메시지를 입력해 주세요."
+				/>
 
-			<label>
-				이름을 적어 주세요.
-				<input type="text" name="name" placeholder="이름" required />
-			</label>
+				<div class="name-container">
+					<span>From</span>
+					<input
+						class="message-dialog"
+						type="text"
+						name="name"
+						placeholder="이름을 입력해 주세요."
+						required
+					/>
+				</div>
+			</div>
 
 			<div class="buttons">
-				<button type="submit">전송</button>
-				<button type="button" on:click={onClose}>취소</button>
+				<button type="submit">전송하기</button>
+				<button type="button" on:click={onClose}>취소하기</button>
 			</div>
 		</form>
 	</dialog>
@@ -257,7 +270,8 @@
 	.money h2,
 	.guest-book h2,
 	.notice h2,
-	.photos h2 {
+	.photos h2,
+	dialog h2 {
 		font-family: Cafe24Shiningstar;
 		font-size: 1.5em;
 		color: #66725d;
@@ -294,6 +308,85 @@
 		font-size: 0.9em;
 	}
 
+	.message-dialog {
+		background-color: rgb(102, 114, 93, 0.2);
+		border: none;
+		border-radius: 8px;
+		box-sizing: border-box;
+		margin: 10px 0;
+		padding: 10px;
+	}
+
+	textarea {
+		width: 100%;
+		height: 10em;
+		font-family: 'Cafe24Oneprettynight';
+		font-size: 1rem;
+	}
+
+	dialog {
+		padding: 20px;
+		border: none;
+		border-radius: 10px;
+		width: 85%;
+		max-width: 450px;
+	}
+
+	dialog::backdrop {
+		background: rgba(0, 0, 0, 0.4);
+	}
+
+	dialog h2 {
+		margin: 0;
+	}
+
+	.close-button {
+		font-family: sans-serif;
+		position: absolute;
+		top: 22px;
+		right: 22px;
+		border: none;
+		color: #66725d;
+		background-color: white;
+		font-size: 1.7rem;
+		line-height: 1rem;
+		padding: 0;
+	}
+
+	dialog .input-container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
+	.name-container {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.name-container input {
+		margin-left: 10px;
+	}
+
+	dialog input {
+		width: 70%;
+		max-width: 150px;
+	}
+
+	.message-dialog::placeholder {
+		font-size: 13px;
+		font-family: 'Cafe24Oneprettynight';
+		color: #66725d;
+	}
+
+	dialog .buttons button {
+		border: none;
+		border-radius: 10px;
+	}
+
 	.buttons {
 		display: flex;
 		justify-content: space-evenly;
@@ -305,42 +398,6 @@
 		color: #66725e;
 		padding: 3px 25px;
 		font-size: 0.9em;
-	}
-
-	.modal {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.5);
-		z-index: 999;
-		/* display: flex; */
-		justify-content: center;
-		align-items: center;
-	}
-
-	.modal-content {
-		background-color: white;
-		padding: 20px;
-		border-radius: 10px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-		max-width: 80%;
-		max-height: 80%;
-		overflow: auto;
-	}
-
-	.modal-content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		background-color: white;
-		padding: 20px;
-		border-radius: 10px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-		max-width: 80%;
-		max-height: 80%;
-		overflow: auto;
 	}
 
 	ul {
