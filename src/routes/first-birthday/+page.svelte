@@ -111,7 +111,7 @@
 	<section class="guest-book">
 		<h2>축하 메시지 전하기</h2>
 
-		{#each database.reverse() as { name, message }}
+		{#each database as { name, message }}
 			<div class="message">{message} - {name}</div>
 		{/each}
 		<div class="buttons">
@@ -174,8 +174,6 @@
 			<a href="./first-birthday/attendance">🌸 참석 의사 전달하기 🌸</a>
 		</h2>
 	</section>
-
-	<dialog open>내용</dialog>
 </main>
 
 <style>
@@ -287,7 +285,8 @@
 
 	.message {
 		background-color: rgb(250, 254, 249);
-		width: 85%;
+		min-width: 85%;
+		max-width: 85%;
 		margin: 10px;
 		padding: 10px;
 		border-radius: 10px;
