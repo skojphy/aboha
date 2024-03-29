@@ -1,8 +1,12 @@
 <script>
-	export let data;
-	const { database } = data;
 	import { enhance } from '$app/forms';
 	import dol from '$lib/dol/images/dol.png';
+	let dialog;
+
+	const onSubmit = () => {
+		dialog.showModal();
+		return true;
+	};
 </script>
 
 <header>
@@ -19,10 +23,12 @@
 					if (result.type === 'error') {
 						window.alert('잠시 후 다시 시도해 주세요.');
 					}
-					window.location.href = '../first-birthday';
+					setTimeout(() => {
+						window.location.href = '../first-birthday';
+					}, 1800);
 				};
 			}}
-			on:submit={true}
+			on:submit={onSubmit}
 		>
 			<div class="input-container">
 				<label class="text-input" for="nickname"
@@ -69,6 +75,11 @@
 			</div>
 		</form>
 	</section>
+
+	<dialog bind:this={dialog}>
+		<h2>감사합니다.<br />돌잔치에서 만나요!</h2>
+		소중한 개인 정보는<br />돌잔치 이후 일괄 삭제할 예정입니다.
+	</dialog>
 </main>
 
 <style>
@@ -198,5 +209,27 @@
 		left: 0;
 		bottom: 0;
 		background-color: #e0e3de;
+	}
+
+	dialog {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 70vw;
+		border: none;
+		border-radius: 10px;
+		color: #66725d;
+		text-align: center;
+		padding: 20px;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+			rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+			rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	}
+
+	dialog h2 {
+		font-family: 'Cafe24Shiningstar';
+		font-size: 1.5rem;
+		margin: 0 0 15px 0;
 	}
 </style>

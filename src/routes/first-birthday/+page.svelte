@@ -306,6 +306,7 @@
 		align-items: center;
 		width: 100vw;
 		padding: 15px 0;
+		margin-top: 20px;
 	}
 
 	.guest-book button {
