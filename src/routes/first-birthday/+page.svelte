@@ -295,6 +295,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		width: 100vw;
+		padding: 15px 0;
 	}
 
 	.guest-book button {
