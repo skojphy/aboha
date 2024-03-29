@@ -300,7 +300,7 @@
 	}
 
 	.guest-book {
-		background-color: rgb(235, 244, 231);
+		background-color: #e0e3de;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -319,7 +319,7 @@
 	}
 
 	.message {
-		background-color: rgb(250, 254, 249);
+		background-color: white;
 		min-width: 85%;
 		max-width: 85%;
 		margin: 10px;
@@ -439,10 +439,11 @@
 	}
 
 	.attendance {
-		background-color: rgb(235, 244, 231);
+		background-color: #e0e3de;
 		width: 100%;
 		margin-bottom: 0;
 		padding: 0;
+		height: 3.5rem;
 	}
 
 	.attendance h2 {
@@ -452,6 +453,6 @@
 	.attendance a {
 		color: black;
 		display: block;
-		padding: 30px 0;
+		line-height: 3.5rem;
 	}
 </style>

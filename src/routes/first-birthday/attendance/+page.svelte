@@ -72,6 +72,15 @@
 </main>
 
 <style>
+	/* 아이폰 버튼 스타일 초기화 */
+	input:not([type='color']),
+	button,
+	button {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+
 	@font-face {
 		font-family: 'Cafe24Oneprettynight';
 		font-weight: normal;
@@ -188,5 +197,6 @@
 		position: fixed;
 		left: 0;
 		bottom: 0;
+		background-color: #e0e3de;
 	}
 </style>
