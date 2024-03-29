@@ -174,8 +174,6 @@
 			<a href="./first-birthday/attendance">🌸 참석 의사 전달하기 🌸</a>
 		</h2>
 	</section>
-
-	<dialog open>내용</dialog>
 </main>
 
 <style>
