@@ -458,7 +458,7 @@
 		line-height: 3.5rem;
 	}
 
-	.message a {
+	.buttons button {
 		background-color: rgb(102, 114, 94, 0.2);
 	}
 </style>
