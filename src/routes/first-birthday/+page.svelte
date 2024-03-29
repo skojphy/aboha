@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import Gallery from './Gallery.svelte';
 	import images from './images';
+	let dialog;
 
 	onMount(() => {
 		const [lat, lng] = [37.5184067, 126.9094536];
@@ -37,12 +38,15 @@
 	let diffDay = eventDay - now;
 	const days = Math.floor(diffDay / (1000 * 60 * 60 * 24));
 
-	let isModalOpen = false;
-	const openModal = () => {
-		isModalOpen = true;
-	};
-	const closeModal = () => {
-		isModalOpen = false;
+	// let isModalOpen = false;
+	// const openModal = () => {
+	// 	isModalOpen = true;
+	// };
+	// const closeModal = () => {
+	// 	isModalOpen = false;
+	// };
+	const onClose = () => {
+		dialog.close();
 	};
 </script>
 
@@ -112,9 +116,45 @@
 		{/each}
 		<div class="buttons">
 			<a class="link" href="./first-birthday/messages">전체보기</a>
-			<button on:click={openModal}>작성하기</button>
+			<!-- <button on:click={openModal}>작성하기</button> -->
+			<button on:click={() => dialog.showModal()}>작성하기!!</button>
 		</div>
 	</section>
+
+	<dialog bind:this={dialog} on:close={() => console.log('메시지 작성 취소')}>
+		<button class="close-button" on:click={onClose}>X</button>
+		<h2>방명록 작성하기</h2>
+		<form
+			method="POST"
+			action="?/submitForm"
+			use:enhance={() => {
+				return async ({ result }) => {
+					if (result.type === 'error') {
+						window.alert('잠시 후 다시 시도해 주세요.');
+					}
+					window.location.href = './first-birthday';
+				};
+			}}
+			on:submit={() => {
+				console.log('메시지 전송');
+			}}
+		>
+			<label for="message"
+				>메시지를 작성해 주세요.
+				<textarea id="message" name="message" rows="4" cols="50" required />
+			</label>
+
+			<label>
+				이름을 적어 주세요.
+				<input type="text" name="name" placeholder="이름" required />
+			</label>
+
+			<div class="buttons">
+				<button type="submit">전송</button>
+				<button type="button" on:click={onClose}>취소</button>
+			</div>
+		</form>
+	</dialog>
 
 	<section class="notice">
 		<h2>안내 사항</h2>
@@ -134,44 +174,9 @@
 			<a href="./first-birthday/attendance">🌸 참석 의사 전달하기 🌸</a>
 		</h2>
 	</section>
+
+	<dialog open>내용</dialog>
 </main>
-
-{#if isModalOpen}
-	<div class="modal" style={isModalOpen ? 'display: flex' : 'display: none'}>
-		<div class="modal-content">
-			<button class="close-button" on:click={closeModal}>X</button>
-			<h2>방명록 작성하기</h2>
-			<form
-				method="POST"
-				action="?/submitForm"
-				use:enhance={() => {
-					return async ({ result }) => {
-						if (result.type === 'error') {
-							window.alert('잠시 후 다시 시도해 주세요.');
-						}
-						window.location.href = './first-birthday';
-					};
-				}}
-				on:submit={true}
-			>
-				<label for="message"
-					>메시지를 작성해 주세요.
-					<textarea id="message" name="message" rows="4" cols="50" required />
-				</label>
-
-				<label>
-					이름을 적어 주세요.
-					<input type="text" name="name" placeholder="이름" required />
-				</label>
-
-				<div class="buttons">
-					<button type="submit">전송</button>
-					<button type="button" on:click={closeModal}>취소</button>
-				</div>
-			</form>
-		</div>
-	</div>
-{/if}
 
 <style>
 	@font-face {
