@@ -24,7 +24,7 @@
 						window.alert('잠시 후 다시 시도해 주세요.');
 					}
 					setTimeout(() => {
-						window.location.href = '../first-birthday';
+						window.location.href = '../rock-festival';
 					}, 1800);
 				};
 			}}

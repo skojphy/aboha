@@ -115,7 +115,7 @@
 			<div class="message">{message} - {name}</div>
 		{/each}
 		<div class="buttons">
-			<a class="link" href="./first-birthday/messages">전체보기</a>
+			<a class="link" href="./rock-festival/messages">전체보기</a>
 			<!-- <button on:click={openModal}>작성하기</button> -->
 			<button on:click={() => dialog.showModal()}>작성하기</button>
 		</div>
@@ -132,7 +132,7 @@
 					if (result.type === 'error') {
 						window.alert('잠시 후 다시 시도해 주세요.');
 					}
-					window.location.href = './first-birthday';
+					window.location.href = './rock-festival';
 				};
 			}}
 			on:submit={() => {
@@ -184,7 +184,7 @@
 
 	<section class="attendance">
 		<h2>
-			<a href="./first-birthday/attendance">🌸 참석 의사 전달하기 🌸</a>
+			<a href="./rock-festival/attendance">🌸 참석 의사 전달하기 🌸</a>
 		</h2>
 	</section>
 </main>
