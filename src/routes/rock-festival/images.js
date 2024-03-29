@@ -5,7 +5,7 @@ const images = new Array(12).fill().map((image, i) =>( {
     largeURL: galleryImages[i],
     thumbnailURL: thumbImages[i],
     width: 500,
-    height: i === 1 ?  1000 / 3 : i === 2 || i === 8 ? 281.25 : i === 0 ? 2500 / 7 : 500,
+    height: i === 1 ?  1000 / 3 : i === 2 || i === 8 ? 281.25 : i === 3 ? 2500 / 7 : 500,
     alt: '333',
 }));
 
