@@ -214,7 +214,7 @@
 
 	dialog {
 		position: fixed;
-		top: 45%;
+		top: 30%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 70vw;
