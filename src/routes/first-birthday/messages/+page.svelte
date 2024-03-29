@@ -43,6 +43,7 @@
 
 	main {
 		padding: 0;
+		width: 100vw;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -51,11 +52,13 @@
 
 	h2 {
 		text-align: center;
+		display: block;
 	}
 
 	section {
+		width: 100vw;
 		padding: 10px;
-		margin: 10px 0;
+		margin: 0;
 	}
 
 	.guest-book h2 {
@@ -65,19 +68,20 @@
 	}
 
 	.guest-book {
-		background-color: rgb(235, 244, 231);
+		background-color: white;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
 	.message {
-		background-color: rgb(250, 254, 249);
+		background-color: rgb(102, 114, 92, 0.2);
 		margin: 10px;
-		padding: 10px;
+		padding: 15px;
 		border-radius: 10px;
 		font-size: 0.9em;
 		min-width: 85%;
 		max-width: 85%;
+		box-sizing: border-box;
 	}
 </style>
