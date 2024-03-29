@@ -10,7 +10,7 @@
 	<section class="guest-book">
 		<h2>To. 아보하</h2>
 
-		{#each database.reverse() as { name, message }}
+		{#each database as { name, message }}
 			<div class="message">{message} - {name}</div>
 		{/each}
 	</section>
@@ -73,10 +73,11 @@
 
 	.message {
 		background-color: rgb(250, 254, 249);
-		width: 85%;
 		margin: 10px;
 		padding: 10px;
 		border-radius: 10px;
 		font-size: 0.9em;
+		min-width: 85%;
+		max-width: 85%;
 	}
 </style>

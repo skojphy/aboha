@@ -5,7 +5,7 @@ export const load = async function () {
 	const loadData = JSON.parse(JSON.stringify(data));
 
 	return {
-		database: loadData
+		database: loadData.reverse().slice(0, 6)
 	};
 };
 
