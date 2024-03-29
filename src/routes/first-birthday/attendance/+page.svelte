@@ -24,38 +24,48 @@
 			}}
 			on:submit={true}
 		>
-			<label for="nickname"
-				>이름
-				<input type="text" name="nickname" placeholder="닉네임/본명" required />
-			</label>
+			<div class="input-container">
+				<label class="text-input" for="nickname"
+					><span>이름 </span>
+					<input type="text" name="nickname" placeholder="닉네임/본명" required />
+				</label>
 
-			<label for="account"
-				>환급 계좌
-				<input type="text" name="account" placeholder="숫자만 적어 주세요" required />
-			</label>
+				<label class="text-input" for="account"
+					><span>환급 계좌</span>
+					<input type="text" name="account" placeholder="숫자만 적어 주세요" required />
+				</label>
 
-			<label for="bank"
-				>은행
-				<input type="text" name="bank" placeholder="예) 아보하뱅크" required />
-			</label>
+				<label class="text-input" for="bank"
+					><span>은행</span>
+					<input type="text" name="bank" placeholder="예) 아보하뱅크" required />
+				</label>
 
-			<label for="arrival"
-				>참석 시간
-				<input type="text" name="arrival" placeholder="예) 늦참 - 20시, 정시 참여" required />
-			</label>
+				<label class="text-input" for="arrival"
+					><span>참석 시간</span>
+					<input type="text" name="arrival" placeholder="예) 늦참 - 20시, 정시 참여" required />
+				</label>
 
-			<label for="leave"
-				>퇴근 시간
-				<input type="text" name="leave" placeholder="예) 올나잇, 조퇴 - 23시" required />
-			</label>
+				<label class="text-input" for="leave"
+					><span>퇴근 시간</span>
+					<input type="text" name="leave" placeholder="예) 올나잇, 조퇴 - 23시" required />
+				</label>
 
-			<label for="boardgame"
-				>보드게임 가져오세요?
-				<input type="radio" name="boardgame" required />
-			</label>
+				<div class="text-input">
+					<span>보드게임 가져오세요?</span>
+					<label>
+						<input type="radio" name="boardgame" value="yes" />
+						<span>예</span>
+					</label>
+
+					<label>
+						<input type="radio" name="boardgame" value="no" />
+						<span>아니요</span>
+					</label>
+				</div>
+			</div>
 
 			<div class="buttons">
-				<button type="submit">전송</button>
+				<button type="submit">제출하기</button>
 			</div>
 		</form>
 	</section>
@@ -94,7 +104,89 @@
 		font-family: 'Cafe24Oneprettynight', Calibri, 'Trebuchet MS', sans-serif;
 	}
 
-	label {
-		display: block;
+	h1 {
+		font-family: 'Cafe24Shiningstar';
+	}
+
+	img {
+		width: 85vw;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 20px 0;
+	}
+
+	.text-input {
+		width: 85vw;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin: 15px 0;
+	}
+
+	.text-input span {
+		font-size: 0.9em;
+	}
+
+	.text-input [type='text'] {
+		width: 60vw;
+		border: none;
+		background-color: #e0e3de;
+		color: #66725d;
+		border-radius: 5px;
+		padding: 0 7px;
+	}
+
+	.text-input input::placeholder {
+		font-size: 0.8em;
+	}
+
+	input {
+		height: 1.8rem;
+	}
+
+	[type='radio'],
+	span {
+		vertical-align: middle;
+	}
+
+	[type='radio'] {
+		appearance: none;
+		border: max(2px, 0.1em) solid gray;
+		border-radius: 50%;
+		width: 1.15em;
+		height: 1.15em;
+		transition: border 0.5s ease-in-out;
+	}
+
+	[type='radio']:checked {
+		border: 0.35em solid #66725d;
+	}
+
+	[type='radio']:focus-visible {
+		outline-offset: max(2px, 0.1em);
+		outline: max(2px, 0.1em) dotted #66725d;
+	}
+
+	[type='radio']:hover {
+		box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+		cursor: pointer;
+	}
+
+	.input-container {
+		min-height: 65vh;
+	}
+
+	.buttons button {
+		width: 100vw;
+		height: 3.5rem;
+		border: none;
+		position: fixed;
+		left: 0;
+		bottom: 0;
 	}
 </style>
