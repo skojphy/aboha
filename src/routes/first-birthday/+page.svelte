@@ -111,7 +111,7 @@
 			<div class="message">{message} - {name}</div>
 		{/each}
 		<div class="buttons">
-			<button>전체보기</button>
+			<a class="link" href="./first-birthday/messages">전체보기</a>
 			<button on:click={openModal}>작성하기</button>
 		</div>
 	</section>
@@ -139,6 +139,7 @@
 {#if isModalOpen}
 	<div class="modal" style={isModalOpen ? 'display: flex' : 'display: none'}>
 		<div class="modal-content">
+			<button class="close-button" on:click={closeModal}>X</button>
 			<h2>방명록 작성하기</h2>
 			<form
 				method="POST"
@@ -165,7 +166,7 @@
 
 				<div class="buttons">
 					<button type="submit">전송</button>
-					<button on:click={closeModal}>취소</button>
+					<button type="button" on:click={closeModal}>취소</button>
 				</div>
 			</form>
 		</div>
@@ -294,7 +295,8 @@
 		margin: 5px 0;
 	}
 
-	.buttons button {
+	.buttons button,
+	.buttons a {
 		color: #66725e;
 		padding: 3px 25px;
 		font-size: 0.9em;
@@ -308,7 +310,7 @@
 		height: 100%;
 		background-color: rgba(0, 0, 0, 0.5);
 		z-index: 999;
-		display: flex;
+		/* display: flex; */
 		justify-content: center;
 		align-items: center;
 	}
