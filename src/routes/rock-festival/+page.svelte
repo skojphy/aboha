@@ -112,7 +112,11 @@
 		<h2>축하 메시지 전하기</h2>
 
 		{#each database as { name, message }}
-			<div class="message">{message} - {name}</div>
+			<!-- <div class="message">{message} - {name}</div> -->
+			<div class="box__message">
+				<p class="message">{message}</p>
+				<p class="name">- {name}</p>
+			</div>
 		{/each}
 		<div class="buttons">
 			<a class="link" href="./rock-festival/messages">전체보기</a>
@@ -319,14 +323,24 @@
 		margin: 10px;
 	}
 
-	.message {
+	.box__message {
 		background-color: white;
-		min-width: 85%;
-		max-width: 85%;
 		margin: 10px;
-		padding: 10px;
+		padding: 15px;
 		border-radius: 10px;
 		font-size: 0.9em;
+		min-width: 85%;
+		max-width: 85%;
+		box-sizing: border-box;
+	}
+
+	.box__message p {
+		margin: 0;
+		padding: 0;
+	}
+
+	.name {
+		text-align: right;
 	}
 
 	.message-dialog {
