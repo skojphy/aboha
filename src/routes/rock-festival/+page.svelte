@@ -62,7 +62,7 @@
 
 	<section class="info">
 		<p>
-			2024년 4월 20일 17일<br />
+			2024년 4월 20일 17시<br />
 			서울특별시 영등포구 영등포동3가 13<br />
 			<a href="https://map.kakao.com/link/to/D2%ED%8C%8C%ED%8B%B0%EB%A3%B8,37.504547,126.897091"
 				>자갈자갈 바베큐</a
