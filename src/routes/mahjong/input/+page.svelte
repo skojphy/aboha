@@ -35,17 +35,7 @@
   
       isSubmitting = true;
   
-      const payload = {
-        east,
-        south,
-        west,
-        north,
-        e_score,
-        s_score,
-        w_score,
-        n_score,
-        winning
-      };
+      const payload = { east, south, west, north, e_score, s_score, w_score, n_score, winning };
   
       try {
         const res = await fetch('/mahjong/api/submit', {
@@ -156,13 +146,15 @@
   
   <style>
     .grid-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       padding: 1rem;
     }
   
     .grid-item {
+      flex: 1 1 calc(25% - 1rem);
+      min-width: 200px;
       border: 1px solid #ddd;
       border-radius: 6px;
       padding: 1rem;
@@ -171,9 +163,11 @@
   
     .grid-item h3 {
       margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: #333;
     }
   
-    .grid-item input[type="number"] {
+    .grid-item input {
       width: 100%;
       margin-bottom: 0.5rem;
       padding: 0.4rem;
@@ -196,7 +190,7 @@
     }
   
     .submit-btn {
-      grid-column: span 4;
+      flex: 1 1 100%;
       padding: 0.8rem 1.2rem;
       background: #4caf50;
       color: white;
@@ -209,6 +203,19 @@
     .submit-btn[disabled] {
       opacity: 0.6;
       cursor: not-allowed;
+    }
+  
+    @media(max-width: 768px) {
+      .grid-container {
+        flex-direction: column;
+      }
+      .grid-item {
+        flex: 1 1 100%;
+        min-width: auto;
+      }
+      .submit-btn {
+        margin-top: 1rem;
+      }
     }
   </style>
   
