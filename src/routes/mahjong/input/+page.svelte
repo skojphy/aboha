@@ -56,17 +56,16 @@
         const { status } = await res.json();
   
         if (status === 'success') {
-          alert('노션에 데이터가 정상적으로 저장되었습니다!');
-          // 입력값 초기화
+          alert('데이터가 정상적으로 저장되었습니다!');
           east = south = west = north = '';
           e_score = s_score = w_score = n_score = 0;
           winning = { east: {}, south: {}, west: {}, north: {} };
         } else {
-          alert('데이터 저장 중 오류가 발생했습니다.');
+          alert('데이터 저장 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
         }
       } catch (err) {
         console.error(err);
-        alert('서버 통신 중 오류가 발생했습니다.');
+        alert('서버 통신 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
       } finally {
         isSubmitting = false;
       }
