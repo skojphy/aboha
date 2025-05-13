@@ -21,6 +21,7 @@
 		"vite": "^4.4.2"
 	},
 	"dependencies": {
+		"@notionhq/client": "^3.0.1",
 		"mongodb": "^6.1.0",
 		"photoswipe": "^5.4.3",
 		"svelte-preprocess": "^5.0.4"
