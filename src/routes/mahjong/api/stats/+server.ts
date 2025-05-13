@@ -1,7 +1,10 @@
 import { json } from '@sveltejs/kit';
 import { Client } from '@notionhq/client';
 
-const notion = new Client({ auth: import.meta.env.VITE_NOTION_TOKEN });
+const notion = new Client({
+  auth: import.meta.env.VITE_NOTION_TOKEN,
+  timeoutMs: 30000
+});
 const databaseId = import.meta.env.VITE_NOTION_DB_ID;
 
 type Row = {
