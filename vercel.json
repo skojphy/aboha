@@ -1,0 +1,8 @@
+{
+	"rewrites": [
+		{
+			"source": "/mahjong/:path*",
+			"destination": "https://a-ma-ha.vercel.app/:path*"
+		}
+	]
+}
