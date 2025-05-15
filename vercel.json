@@ -2,6 +2,18 @@
 	"version": 2,
 	"rewrites": [
 		{
+			"source": "/mahjong/_app/:path*",
+			"destination": "https://a-ma-ha.vercel.app/_app/:path*"
+		},
+		{
+			"source": "/mahjong/assets/:path*",
+			"destination": "https://a-ma-ha.vercel.app/assets/:path*"
+		},
+		{
+			"source": "/mahjong/favicon.ico",
+			"destination": "https://a-ma-ha.vercel.app/favicon.ico"
+		},
+		{
 			"source": "/mahjong/:path*",
 			"destination": "https://a-ma-ha.vercel.app/:path*"
 		}
