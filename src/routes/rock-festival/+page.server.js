@@ -1,12 +1,12 @@
 import { database_dol } from '$data/database';
 
 export const load = async function () {
-	const data = await database_dol.find({}).toArray();
-	const loadData = JSON.parse(JSON.stringify(data));
-
-	return {
-		database: loadData.reverse().slice(0, 6)
-	};
+	try {
+		const data = await database_dol.find({}).toArray();
+		return { database: JSON.parse(JSON.stringify(data)).reverse().slice(0, 6) };
+	} catch {
+		return { database: [] };
+	}
 };
 
 export const actions = {
