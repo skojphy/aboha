@@ -3,35 +3,9 @@
 	const { database } = data;
 	import { enhance } from '$app/forms';
 	import mainImage from '$lib/dol/images/invitation1.png';
-	import { onMount } from 'svelte';
 	import Gallery from './Gallery.svelte';
 	import images from './images';
 	let dialog;
-
-	onMount(() => {
-		const [lat, lng] = [37.5184067, 126.9094536];
-		const markerPosition = new kakao.maps.LatLng(lat, lng);
-		const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-		const options = {
-			center: markerPosition,
-			level: 3
-		};
-
-		const map = new kakao.maps.Map(container, options);
-		const marker = new kakao.maps.Marker({
-			position: markerPosition
-		});
-		const content =
-			'<div class ="label" style="transform: translateY(-57px); background-color: rgba(102, 115, 92, 0.93); padding: 4px 8px; border-radius: 8px; font-size: 0.8em;"><span class="left"></span><span class="center" style="color: white"><a style="color:white" href="https://map.kakao.com/link/to/D2%ED%8C%8C%ED%8B%B0%EB%A3%B8,37.504547,126.897091">4층 자갈자갈 바베큐!</a></span><span class="right"></span></div>';
-
-		const customOverlay = new kakao.maps.CustomOverlay({
-			position: markerPosition,
-			content: content
-		});
-
-		marker.setMap(map);
-		customOverlay.setMap(map);
-	});
 
 	// 한국 시간 기준 날짜 차이 (행사일 = 0)
 	const DAY = 1000 * 60 * 60 * 24;
@@ -73,8 +47,6 @@
 
 		<p class="dday">🌸 아보하 {ddayLabel} 🌸</p>
 	</section>
-
-	<div id="map" />
 
 	<div class="line" />
 
@@ -272,12 +244,6 @@
 		height: 1.3rem;
 	}
 
-	#map {
-		/* overflow: auto; */
-		width: 85vw;
-		height: 60vw;
-	}
-
 	.line {
 		width: 1px;
 		height: 130px;
@@ -434,10 +400,13 @@
 
 	.buttons button,
 	.buttons a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 		color: #66725e;
-		padding: 5px 10px;
+		padding: 6px 14px;
 		font-size: 0.9em;
-		height: 1.5rem;
+		line-height: 1;
 		box-sizing: border-box;
 		margin: 5px 20px;
 	}
