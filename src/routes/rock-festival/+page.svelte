@@ -33,10 +33,12 @@
 		customOverlay.setMap(map);
 	});
 
-	const now = new Date();
-	const eventDay = new Date('2024-04-20');
-	let diffDay = eventDay - now;
-	const days = Math.floor(diffDay / (1000 * 60 * 60 * 24));
+	// 한국 시간 기준 날짜 차이 (행사일 = 0)
+	const DAY = 1000 * 60 * 60 * 24;
+	const todayKST = Math.floor((Date.now() + 9 * 60 * 60 * 1000) / DAY);
+	const eventDayKST = Math.floor(Date.UTC(2024, 3, 20) / DAY);
+	const days = eventDayKST - todayKST;
+	const ddayLabel = days > 0 ? `돌까지 D-${days}` : days === 0 ? '돌 D-day' : `돌 D+${-days}`;
 
 	// let isModalOpen = false;
 	// const openModal = () => {
@@ -69,7 +71,7 @@
 			>
 		</p>
 
-		<p class="dday">🌸 아보하 돌까지 D-{days} 🌸</p>
+		<p class="dday">🌸 아보하 {ddayLabel} 🌸</p>
 	</section>
 
 	<div id="map" />
